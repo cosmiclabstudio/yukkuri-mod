@@ -1,0 +1,32 @@
+{
+    "schemaVersion": 1,
+    "id": "yukkuri",
+    "version": "${version}",
+    "name": "Yukkuri",
+    "description": "Meet the Yukkuri in your Minecraft World and Take it Easy!",
+    "authors": [
+        "sorae42"
+    ],
+    "contact": {
+        "repo": "https://github.com/sorae42/yukkuri-mod"
+    },
+    "license": "MIT",
+    "icon": "assets/yukkuri/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "client": [
+            "com.touhou.yukkuri.yukkuri.client.YukkuriClient"
+        ],
+        "main": [
+            "com.touhou.yukkuri.yukkuri.Yukkuri"
+        ]
+    },
+    "mixins": [
+        "yukkuri.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.14.10",
+        "fabric": "*",
+        "minecraft": "1.19.2"
+    }
+}
