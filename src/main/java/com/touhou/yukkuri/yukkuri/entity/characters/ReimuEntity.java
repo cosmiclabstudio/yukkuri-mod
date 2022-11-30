@@ -1,13 +1,23 @@
-package com.touhou.yukkuri.yukkuri.entity.custom;
+package com.touhou.yukkuri.yukkuri.entity.characters;
 
+import com.touhou.yukkuri.yukkuri.Yukkuri;
+import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.world.LocalDifficulty;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.controller.AnimationController;
@@ -16,10 +26,16 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
-public class YukkuriEntity extends PassiveEntity implements IAnimatable {
-    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+import java.util.List;
 
-    public YukkuriEntity(EntityType<? extends PassiveEntity> entityType, World world) {
+public class ReimuEntity extends PassiveEntity implements IAnimatable {
+    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private static final TrackedData<String> CHARACTER = DataTracker.registerData(ReimuEntity.class, TrackedDataHandlerRegistry.STRING);
+    public static final List<String> CHARACTERS = List.of(
+            "reimu", "marisa"
+    );
+
+    public ReimuEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -33,11 +49,12 @@ public class YukkuriEntity extends PassiveEntity implements IAnimatable {
     protected void initGoals() {
         this.goalSelector.add(0, new EscapeDangerGoal(this, 1.25D));
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new SitGoal(this));
-        this.goalSelector.add(1, new FollowOwnerGoal(this, 1D, 30f, 7f, true));
         this.goalSelector.add(2, new LookAroundGoal(this));
         this.goalSelector.add(2, new LookAtEntityGoal(this, PlayerEntity.class, 8f));
-        this.goalSelector.add(3, new AnimalMateGoal(this, 1D));
+    }
+
+    protected void initDataTracker() {
+        super.initDataTracker();
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
@@ -46,18 +63,30 @@ public class YukkuriEntity extends PassiveEntity implements IAnimatable {
 
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return null;
+        return Yukkuri.YUKKURI_ENTITY_TYPE.create(world);
+    }
+
+    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
+        return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
 
     @Override
     public void registerControllers(AnimationData animationData) {
         animationData.addAnimationController(
-                new AnimationController(this, "controller", 0, this::predicate)
+                new AnimationController<>(this, "controller", 0, this::predicate)
         );
     }
 
     @Override
     public AnimationFactory getFactory() {
         return factory;
+    }
+
+    private void setYukkuri(String name) {
+        if (CHARACTERS.contains(name)) this.dataTracker.set(CHARACTER, name);
+    }
+
+    public String getYukkuriString() {
+        return this.getDataTracker().get(CHARACTER);
     }
 }
