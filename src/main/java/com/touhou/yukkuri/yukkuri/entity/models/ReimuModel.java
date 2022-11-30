@@ -1,4 +1,4 @@
-package com.touhou.yukkuri.yukkuri.entity.client;
+package com.touhou.yukkuri.yukkuri.entity.models;
 
 import com.touhou.yukkuri.yukkuri.Yukkuri;
 import com.touhou.yukkuri.yukkuri.entity.characters.ReimuEntity;
@@ -13,7 +13,7 @@ public class ReimuModel extends AnimatedGeoModel<ReimuEntity> {
 
     @Override
     public Identifier getTextureResource(ReimuEntity yukkuriEntity) {
-        return new Identifier(Yukkuri.MOD_ID, "textures/entity/" + yukkuriEntity.getYukkuriString() + ".png");
+        return new Identifier(Yukkuri.MOD_ID, "textures/entity/reimu.png");
     }
 
     @Override
