@@ -1,11 +1,11 @@
 package com.touhou.yukkuri.yukkuri.entity.custom;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.LookAroundGoal;
-import net.minecraft.entity.ai.goal.WanderAroundGoal;
+import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -16,10 +16,10 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
-public class ReimuYukkuriEntity extends PassiveEntity implements IAnimatable {
+public class YukkuriEntity extends PassiveEntity implements IAnimatable {
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
-    public ReimuYukkuriEntity(EntityType<? extends PassiveEntity> entityType, World world) {
+    public YukkuriEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -31,8 +31,13 @@ public class ReimuYukkuriEntity extends PassiveEntity implements IAnimatable {
 
     @Override
     protected void initGoals() {
-        this.goalSelector.add(1, new WanderAroundGoal(this, 0.5f, 1));
+        this.goalSelector.add(0, new EscapeDangerGoal(this, 1.25D));
+        this.goalSelector.add(0, new SwimGoal(this));
+        this.goalSelector.add(1, new SitGoal(this));
+        this.goalSelector.add(1, new FollowOwnerGoal(this, 1D, 30f, 7f, true));
         this.goalSelector.add(2, new LookAroundGoal(this));
+        this.goalSelector.add(2, new LookAtEntityGoal(this, PlayerEntity.class, 8f));
+        this.goalSelector.add(3, new AnimalMateGoal(this, 1D));
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
