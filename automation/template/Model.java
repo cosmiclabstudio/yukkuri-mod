@@ -7,12 +7,12 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class %String%Model extends AnimatedGeoModel<%String%Entity> {
     @Override
-    public Identifier getModelResource(%String%Entity yukkuriEntity) {
+    public Identifier getModelResource(%String%Entity %string%Entity) {
         return new Identifier(Yukkuri.MOD_ID, "geo/%string%.json");
     }
 
     @Override
-    public Identifier getTextureResource(%String%Entity yukkuriEntity) {
+    public Identifier getTextureResource(%String%Entity %string%Entity) {
         return new Identifier(Yukkuri.MOD_ID, "textures/entity/%string%.png");
     }
 

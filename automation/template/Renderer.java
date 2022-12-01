@@ -8,7 +8,7 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 public class %String%Renderer extends GeoEntityRenderer<%String%Entity> {
     public %String%Renderer(EntityRendererFactory.Context context) {
-        super(context, new %string%Model());
+        super(context, new %String%Model());
         this.shadowOpacity = 1f;
     }
 

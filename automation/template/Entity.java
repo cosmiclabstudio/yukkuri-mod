@@ -27,9 +27,9 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class %String%Entity extends PassiveEntity implements IAnimatable {
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
-    private static final TrackedData<String> CHARACTER = DataTracker.registerData(%string%Entity.class, TrackedDataHandlerRegistry.STRING);
+    private static final TrackedData<String> CHARACTER = DataTracker.registerData(%String%Entity.class, TrackedDataHandlerRegistry.STRING);
 
-    public %string%Entity(EntityType<? extends PassiveEntity> entityType, World world) {
+    public %String%Entity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
     }
 

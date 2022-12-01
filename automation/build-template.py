@@ -63,3 +63,4 @@ for i in CHARACTERS:
             outfile.write(line)
 
 print("OK")
+print("You still have to manually replace all the files.")
