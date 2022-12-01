@@ -81,4 +81,11 @@ public class PatchouliEntity extends PassiveEntity implements IAnimatable {
     protected SoundEvent getAmbientSound() {
         return SoundRegistry.ENTITY_PATCHOULI_MUKYU;
     }
+
+    @Override
+    public void playAmbientSound() {
+        if (!world.isClient) {
+            this.playSound(getAmbientSound(), 1, 1);
+        }
+    }
 }
