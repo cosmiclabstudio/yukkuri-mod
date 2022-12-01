@@ -1,7 +1,7 @@
-package com.touhou.yukkuri.yukkuri.entity.renderer;
+package com.touhou.yukkuri.entity.renderer;
 
-import com.touhou.yukkuri.yukkuri.entity.characters.%String%Entity;
-import com.touhou.yukkuri.yukkuri.entity.models.%String%Model;
+import com.touhou.yukkuri.entity.characters.%String%Entity;
+import com.touhou.yukkuri.entity.models.%String%Model;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.util.Identifier;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;

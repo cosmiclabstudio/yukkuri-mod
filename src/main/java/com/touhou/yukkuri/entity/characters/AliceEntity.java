@@ -4,7 +4,10 @@ import com.touhou.yukkuri.Yukkuri;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.ai.goal.EscapeDangerGoal;
+import net.minecraft.entity.ai.goal.LookAroundGoal;
+import net.minecraft.entity.ai.goal.LookAtEntityGoal;
+import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
@@ -25,11 +28,11 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
-public class %String%Entity extends PassiveEntity implements IAnimatable {
+public class AliceEntity extends PassiveEntity implements IAnimatable {
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
-    private static final TrackedData<String> CHARACTER = DataTracker.registerData(%String%Entity.class, TrackedDataHandlerRegistry.STRING);
+    private static final TrackedData<String> CHARACTER = DataTracker.registerData(AliceEntity.class, TrackedDataHandlerRegistry.STRING);
 
-    public %String%Entity(EntityType<? extends PassiveEntity> entityType, World world) {
+    public AliceEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -41,6 +44,7 @@ public class %String%Entity extends PassiveEntity implements IAnimatable {
     protected void initGoals() {
         this.goalSelector.add(0, new EscapeDangerGoal(this, 1.25D));
         this.goalSelector.add(0, new SwimGoal(this));
+        this.goalSelector.add(0, new LookAtEntityGoal(this, MarisaEntity.class, 12f));
         this.goalSelector.add(1, new LookAroundGoal(this));
         this.goalSelector.add(1, new LookAtEntityGoal(this, PlayerEntity.class, 8f));
     }
@@ -55,7 +59,7 @@ public class %String%Entity extends PassiveEntity implements IAnimatable {
 
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return Yukkuri.%STRING%_YUKKURI_TYPE.create(world);
+        return Yukkuri.ALICE_YUKKURI_TYPE.create(world);
     }
 
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {

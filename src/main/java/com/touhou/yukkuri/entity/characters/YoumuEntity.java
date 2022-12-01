@@ -19,17 +19,18 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
+import software.bernie.geckolib3.core.builder.AnimationBuilder;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
-public class %String%Entity extends PassiveEntity implements IAnimatable {
+public class YoumuEntity extends PassiveEntity implements IAnimatable {
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
-    private static final TrackedData<String> CHARACTER = DataTracker.registerData(%String%Entity.class, TrackedDataHandlerRegistry.STRING);
+    private static final TrackedData<String> CHARACTER = DataTracker.registerData(YoumuEntity.class, TrackedDataHandlerRegistry.STRING);
 
-    public %String%Entity(EntityType<? extends PassiveEntity> entityType, World world) {
+    public YoumuEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -50,12 +51,13 @@ public class %String%Entity extends PassiveEntity implements IAnimatable {
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.youmu.ghost_guided", true));
         return PlayState.CONTINUE;
     }
 
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return Yukkuri.%STRING%_YUKKURI_TYPE.create(world);
+        return Yukkuri.YOUMU_YUKKURI_TYPE.create(world);
     }
 
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {

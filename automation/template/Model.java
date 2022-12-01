@@ -1,7 +1,7 @@
-package com.touhou.yukkuri.yukkuri.entity.models;
+package com.touhou.yukkuri.entity.models;
 
-import com.touhou.yukkuri.yukkuri.Yukkuri;
-import com.touhou.yukkuri.yukkuri.entity.characters.%String%Entity;
+import com.touhou.yukkuri.Yukkuri;
+import com.touhou.yukkuri.entity.characters.%String%Entity;
 import net.minecraft.util.Identifier;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 

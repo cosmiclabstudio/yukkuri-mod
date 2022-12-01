@@ -15,10 +15,10 @@
     "environment": "*",
     "entrypoints": {
         "client": [
-            "com.touhou.yukkuri.yukkuri.client.YukkuriClient"
+            "com.touhou.yukkuri.client.YukkuriClient"
         ],
         "main": [
-            "com.touhou.yukkuri.yukkuri.Yukkuri"
+            "com.touhou.yukkuri.Yukkuri"
         ]
     },
     "mixins": [
