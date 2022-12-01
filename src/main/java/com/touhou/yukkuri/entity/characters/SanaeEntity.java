@@ -1,6 +1,6 @@
 package com.touhou.yukkuri.entity.characters;
 
-import com.touhou.yukkuri.Yukkuri;
+import com.touhou.yukkuri.entity.EntityRegistry;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -56,7 +56,7 @@ public class SanaeEntity extends PassiveEntity implements IAnimatable {
 
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return Yukkuri.SANAE_YUKKURI_TYPE.create(world);
+        return EntityRegistry.SANAE_YUKKURI_TYPE.create(world);
     }
 
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {

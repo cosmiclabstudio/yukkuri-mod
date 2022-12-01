@@ -1,6 +1,7 @@
 package com.touhou.yukkuri.entity.characters;
 
-import com.touhou.yukkuri.Yukkuri;
+import com.touhou.yukkuri.entity.EntityRegistry;
+import com.touhou.yukkuri.sounds.SoundRegistry;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -13,6 +14,7 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
@@ -56,7 +58,7 @@ public class CirnoEntity extends PassiveEntity implements IAnimatable {
 
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return Yukkuri.CIRNO_YUKKURI_TYPE.create(world);
+        return EntityRegistry.CIRNO_YUKKURI_TYPE.create(world);
     }
 
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
@@ -73,5 +75,10 @@ public class CirnoEntity extends PassiveEntity implements IAnimatable {
     @Override
     public AnimationFactory getFactory() {
         return factory;
+    }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundRegistry.ENTITY_CIRNO_BAKA;
     }
 }

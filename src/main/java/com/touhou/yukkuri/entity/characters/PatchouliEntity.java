@@ -1,13 +1,12 @@
 package com.touhou.yukkuri.entity.characters;
 
-import com.touhou.yukkuri.Yukkuri;
+import com.touhou.yukkuri.entity.EntityRegistry;
 import com.touhou.yukkuri.sounds.SoundRegistry;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
@@ -59,7 +58,7 @@ public class PatchouliEntity extends PassiveEntity implements IAnimatable {
 
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return Yukkuri.PATCHOULI_YUKKURI_TYPE.create(world);
+        return EntityRegistry.PATCHOULI_YUKKURI_TYPE.create(world);
     }
 
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
@@ -81,10 +80,5 @@ public class PatchouliEntity extends PassiveEntity implements IAnimatable {
     @Override
     protected SoundEvent getAmbientSound() {
         return SoundRegistry.ENTITY_PATCHOULI_MUKYU;
-    }
-
-    @Override
-    protected SoundEvent getHurtSound(DamageSource source) {
-        return SoundRegistry.ENTITY_PATCHOULI_HURT;
     }
 }
