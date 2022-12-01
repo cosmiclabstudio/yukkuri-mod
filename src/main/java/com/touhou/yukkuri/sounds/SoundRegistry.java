@@ -7,7 +7,7 @@ import net.minecraft.util.registry.Registry;
 
 public class SoundRegistry {
     public static SoundEvent ENTITY_PATCHOULI_MUKYU = register("entity.patchouli.mukyu");
-    public static SoundEvent ENTITY_PATCHOULI_HURT  = register("entity.patchouli.hurt");
+    public static SoundEvent ENTITY_CIRNO_BAKA      = register("entity.cirno.baka");
 
     private static SoundEvent register(String name) {
         Identifier id = new Identifier(Yukkuri.MOD_ID, name);
