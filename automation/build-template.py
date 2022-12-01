@@ -1,3 +1,7 @@
+# YukkuriMod template builder
+# THIS SCRIPT SHOULD NOT BE USED IF YOU DON'T INTEND TO MASS CONVERT YUKKURIS
+# I leave the script here for legacy purpose.
+
 print("Build Template starting...")
 import os
 
@@ -35,9 +39,9 @@ with open("output/YukkuriClient.java", "w") as f:
         f.writelines("EntityRendererRegistry.register(Yukkuri."+ i.upper() +"_YUKKURI_TYPE, "+ i.capitalize() +"Renderer::new);\n")
         
 print("Building EntityType...")
-with open("output/Yukkuri.java", "w") as f:
+with open("output/EntityRegistry.java", "w") as f:
     for i in CHARACTERS:
-        f.writelines("public static final EntityType<"+ cap(i) +"Entity> "+ up(i)+"_YUKKURI_TYPE = Registry.register(Registry.ENTITY_TYPE, new Identifier(MOD_ID, \""+ i +"\"), FabricEntityTypeBuilder.<"+ cap(i) +"Entity>createMob().spawnGroup(SpawnGroup.CREATURE).entityFactory("+ cap(i) +"Entity::new).defaultAttributes("+ cap(i) +"Entity::setAttributes).dimensions(EntityDimensions.fixed(0.75f, 0.6f)).build());\n")
+        f.writelines("public static EntityType "+up(i)+" = register(\""+i+"\", FabricEntityTypeBuilder.<"+cap(i)+"Entity>createMob().spawnGroup(SpawnGroup.CREATURE).entityFactory("+cap(i)+"Entity::new).defaultAttributes("+cap(i)+"Entity::setAttributes).dimensions(EntityDimensions.fixed(0.75f, 0.6f)).build());\n")
 
 for i in CHARACTERS:
     replacements = {'%string%': i, '%String%': cap(i), '%STRING%': up(i)}

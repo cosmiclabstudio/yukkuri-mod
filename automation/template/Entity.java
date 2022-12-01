@@ -56,7 +56,7 @@ public class %String%Entity extends PassiveEntity implements IAnimatable {
 
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return Yukkuri.%STRING%_YUKKURI_TYPE.create(world);
+        return EntityRegistry.%STRING%_YUKKURI_TYPE.create(world);
     }
 
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
