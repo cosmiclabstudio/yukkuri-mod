@@ -1,6 +1,7 @@
 package com.touhou.yukkuri.yukkuri;
 
 import com.touhou.yukkuri.yukkuri.entity.characters.*;
+import com.touhou.yukkuri.yukkuri.sounds.SoundRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
@@ -20,6 +21,6 @@ public class Yukkuri implements ModInitializer {
     @Override
     public void onInitialize() {
         GeckoLib.initialize();
-
+        SoundRegistry.init();
     }
 }

@@ -1,6 +1,7 @@
 package com.touhou.yukkuri.yukkuri.entity.characters;
 
 import com.touhou.yukkuri.yukkuri.Yukkuri;
+import com.touhou.yukkuri.yukkuri.sounds.SoundRegistry;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -9,6 +10,7 @@ import net.minecraft.entity.ai.goal.LookAroundGoal;
 import net.minecraft.entity.ai.goal.LookAtEntityGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
@@ -16,6 +18,7 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
@@ -75,5 +78,15 @@ public class PatchouliEntity extends PassiveEntity implements IAnimatable {
     @Override
     public AnimationFactory getFactory() {
         return factory;
+    }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundRegistry.ENTITY_PATCHOULI_MUKYU;
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundRegistry.ENTITY_PATCHOULI_HURT;
     }
 }

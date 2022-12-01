@@ -1,0 +1,10 @@
+{
+    "entity.patchouli.mukyu": {
+        "sounds": ["yukkuri:entity/patchouli/mukyu"],
+        "subtitle": "subtitle.yukkuri.patchouli.mukyu"
+    },
+    "entity.patchouli.hurt": {
+        "sounds": ["yukkuri:entity/patchouli/hurt"],
+        "subtitle": "subtitle.yukkuri.patchouli.hurt"
+    }
+}
