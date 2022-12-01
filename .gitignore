@@ -118,4 +118,4 @@ run/
 !gradle-wrapper.jar
 
 # ignore output automation
-automation/output
+automation/output/*
