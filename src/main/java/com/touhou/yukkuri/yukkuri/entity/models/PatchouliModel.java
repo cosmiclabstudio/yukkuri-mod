@@ -7,12 +7,12 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class PatchouliModel extends AnimatedGeoModel<PatchouliEntity> {
     @Override
-    public Identifier getModelResource(PatchouliEntity yukkuriEntity) {
+    public Identifier getModelResource(PatchouliEntity patchouliEntity) {
         return new Identifier(Yukkuri.MOD_ID, "geo/patchouli.json");
     }
 
     @Override
-    public Identifier getTextureResource(PatchouliEntity yukkuriEntity) {
+    public Identifier getTextureResource(PatchouliEntity patchouliEntity) {
         return new Identifier(Yukkuri.MOD_ID, "textures/entity/patchouli.png");
     }
 

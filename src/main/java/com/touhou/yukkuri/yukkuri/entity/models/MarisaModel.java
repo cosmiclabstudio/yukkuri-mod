@@ -7,12 +7,12 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class MarisaModel extends AnimatedGeoModel<MarisaEntity> {
     @Override
-    public Identifier getModelResource(MarisaEntity yukkuriEntity) {
+    public Identifier getModelResource(MarisaEntity marisaEntity) {
         return new Identifier(Yukkuri.MOD_ID, "geo/marisa.json");
     }
 
     @Override
-    public Identifier getTextureResource(MarisaEntity yukkuriEntity) {
+    public Identifier getTextureResource(MarisaEntity marisaEntity) {
         return new Identifier(Yukkuri.MOD_ID, "textures/entity/marisa.png");
     }
 

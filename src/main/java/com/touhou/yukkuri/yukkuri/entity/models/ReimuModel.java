@@ -7,12 +7,12 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class ReimuModel extends AnimatedGeoModel<ReimuEntity> {
     @Override
-    public Identifier getModelResource(ReimuEntity yukkuriEntity) {
+    public Identifier getModelResource(ReimuEntity reimuEntity) {
         return new Identifier(Yukkuri.MOD_ID, "geo/reimu.json");
     }
 
     @Override
-    public Identifier getTextureResource(ReimuEntity yukkuriEntity) {
+    public Identifier getTextureResource(ReimuEntity reimuEntity) {
         return new Identifier(Yukkuri.MOD_ID, "textures/entity/reimu.png");
     }
 

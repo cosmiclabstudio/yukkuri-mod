@@ -1,6 +1,5 @@
 package com.touhou.yukkuri.yukkuri.entity.renderer;
 
-
 import com.touhou.yukkuri.yukkuri.entity.characters.PatchouliEntity;
 import com.touhou.yukkuri.yukkuri.entity.models.PatchouliModel;
 import net.minecraft.client.render.entity.EntityRendererFactory;
