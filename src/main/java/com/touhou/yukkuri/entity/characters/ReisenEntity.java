@@ -43,6 +43,7 @@ public class ReisenEntity extends PassiveEntity implements IAnimatable {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new LookAroundGoal(this));
         this.goalSelector.add(1, new LookAtEntityGoal(this, PlayerEntity.class, 8f));
+        this.goalSelector.add(2, new WanderAroundGoal(this, 0.25D));
     }
 
     protected void initDataTracker() {

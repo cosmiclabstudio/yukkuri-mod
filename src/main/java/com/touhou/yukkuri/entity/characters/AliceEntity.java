@@ -4,10 +4,7 @@ import com.touhou.yukkuri.Yukkuri;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.ai.goal.EscapeDangerGoal;
-import net.minecraft.entity.ai.goal.LookAroundGoal;
-import net.minecraft.entity.ai.goal.LookAtEntityGoal;
-import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
@@ -47,6 +44,7 @@ public class AliceEntity extends PassiveEntity implements IAnimatable {
         this.goalSelector.add(0, new LookAtEntityGoal(this, MarisaEntity.class, 12f));
         this.goalSelector.add(1, new LookAroundGoal(this));
         this.goalSelector.add(1, new LookAtEntityGoal(this, PlayerEntity.class, 8f));
+        this.goalSelector.add(2, new WanderAroundGoal(this, 0.25D));
     }
 
     protected void initDataTracker() {
