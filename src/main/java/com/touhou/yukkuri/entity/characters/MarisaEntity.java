@@ -1,6 +1,7 @@
 package com.touhou.yukkuri.entity.characters;
 
 import com.touhou.yukkuri.entity.EntityRegistry;
+import com.touhou.yukkuri.sounds.SoundRegistry;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -9,10 +10,12 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
+import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
@@ -73,5 +76,10 @@ public class MarisaEntity extends PassiveEntity implements IAnimatable {
     @Override
     public AnimationFactory getFactory() {
         return factory;
+    }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundRegistry.ENTITY_MARISA_ZE;
     }
 }

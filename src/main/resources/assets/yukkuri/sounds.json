@@ -1,11 +1,52 @@
 {
+    "entity.cirno.baka": {
+        "sounds": ["yukkuri:entity/cirno/baka"],
+        "subtitle": "subtitle.yukkuri.cirno.baka"
+    },
+
+    "entity.marisa.evaded": {
+        "sounds": ["yukkuri:entity/marisa/evaded"],
+        "subtitle": "subtitle.yukkuri.marisa.evaded"
+    },
+    "entity.marisa.ze": {
+        "sounds": ["yukkuri:entity/marisa/ze"],
+        "subtitle": "subtitle.yukkuri.marisa.ze"
+    },
+
     "entity.patchouli.mukyu": {
         "sounds": ["yukkuri:entity/patchouli/mukyu"],
         "subtitle": "subtitle.yukkuri.patchouli.mukyu"
     },
 
-    "entity.cirno.baka": {
-        "sounds": ["yukkuri:entity/cirno/baka"],
-        "subtitle": "subtitle.yukkuri.cirno.baka"
+    "entity.scarlet.uuu": {
+        "sounds": [
+            "yukkuri:entity/scarlet/uuu1",
+            "yukkuri:entity/scarlet/uuu2"
+        ],
+        "subtitle": "subtitle.yukkuri.scarlet.uuu"
+    },
+
+    "entity.usagi.bnuuy": {
+        "sounds": [
+            "yukkuri:entity/usagi/bnuuy1",
+            "yukkuri:entity/usagi/bnuuy2"
+        ],
+        "subtitle": "subtitle.yukkuri.usagi.bnuuy"
+    },
+
+    "entity.utsuho.unyu": {
+        "sounds": [
+            "yukkuri:entity/utsuho/unyu1",
+            "yukkuri:entity/utsuho/unyu2",
+            "yukkuri:entity/utsuho/unyu3",
+            "yukkuri:entity/utsuho/unyu4",
+            "yukkuri:entity/utsuho/unyu5"
+        ],
+        "subtitle": "subtitle.yukkuri.utsuho.unyu"
+    },
+
+    "entity.youmu.myon": {
+        "sounds": ["yukkuri:entity/youmu/myon"],
+        "subtitle": "subtitle.yukkuri.youmu.myon"
     }
 }

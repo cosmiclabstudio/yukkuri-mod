@@ -1,6 +1,7 @@
 package com.touhou.yukkuri.entity.characters;
 
 import com.touhou.yukkuri.entity.EntityRegistry;
+import com.touhou.yukkuri.sounds.SoundRegistry;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -13,6 +14,7 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
@@ -73,5 +75,17 @@ public class FlandreEntity extends PassiveEntity implements IAnimatable {
     @Override
     public AnimationFactory getFactory() {
         return factory;
+    }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundRegistry.ENTITY_SCARLET_UUU;
+    }
+
+    @Override
+    public void playAmbientSound() {
+        if (!world.isClient) {
+            this.playSound(getAmbientSound(), 1, 1);
+        }
     }
 }

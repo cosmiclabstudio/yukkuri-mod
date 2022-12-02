@@ -1,6 +1,7 @@
 package com.touhou.yukkuri.entity.characters;
 
 import com.touhou.yukkuri.entity.EntityRegistry;
+import com.touhou.yukkuri.sounds.SoundRegistry;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -13,6 +14,7 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
@@ -52,7 +54,6 @@ public class YoumuEntity extends PassiveEntity implements IAnimatable {
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.youmu.ghost_guided", true));
         return PlayState.CONTINUE;
     }
 
@@ -75,5 +76,18 @@ public class YoumuEntity extends PassiveEntity implements IAnimatable {
     @Override
     public AnimationFactory getFactory() {
         return factory;
+    }
+
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundRegistry.ENTITY_YOUMU_MYON;
+    }
+
+    @Override
+    public void playAmbientSound() {
+        if (!world.isClient) {
+            this.playSound(getAmbientSound(), 1, 1);
+        }
     }
 }
