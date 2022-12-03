@@ -22,6 +22,7 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
@@ -30,6 +31,7 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class YoumuEntity extends PassiveEntity implements IAnimatable {
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private final AnimationBuilder FLOATING_GHOST = new AnimationBuilder().addAnimation("animation.youmu.ghost_guided", ILoopType.EDefaultLoopTypes.LOOP);
     private static final TrackedData<String> CHARACTER = DataTracker.registerData(YoumuEntity.class, TrackedDataHandlerRegistry.STRING);
 
     public YoumuEntity(EntityType<? extends PassiveEntity> entityType, World world) {
@@ -54,6 +56,8 @@ public class YoumuEntity extends PassiveEntity implements IAnimatable {
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        AnimationController controller = event.getController();
+        controller.setAnimation(FLOATING_GHOST);
         return PlayState.CONTINUE;
     }
 
