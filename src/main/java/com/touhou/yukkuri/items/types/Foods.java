@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class Foods {
-    public static final Item BEAN = register("bean", 3, 0.4F);
+    public static final Item BEAN_PASTE = register("bean_paste", 3, 0.4F);
 
     private static Item register(String name, int hunger, float saturation) {
         FoodComponent foodComponent = new FoodComponent.Builder().hunger(hunger).saturationModifier(saturation).build();
