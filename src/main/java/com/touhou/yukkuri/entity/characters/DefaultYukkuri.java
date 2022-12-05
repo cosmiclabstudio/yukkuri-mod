@@ -23,22 +23,22 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class DefaultYukkuri extends PassiveEntity implements IAnimatable {
-    public static final DefaultAttributeContainer.Builder yukkuriAttribute= PassiveEntity.createMobAttributes()
-                    .add(EntityAttributes.GENERIC_MAX_HEALTH, 100.00)
-                    .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5f);
-    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
     public DefaultYukkuri(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
     }
 
     public static DefaultAttributeContainer.Builder setAttributes() {
-        return DefaultYukkuri.yukkuriAttribute;
+        return PassiveEntity.createMobAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 100.00)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5f);
     }
 
     @Override
     protected void initGoals() {
-        this.goalSelector.add(0, new EscapeDangerGoal(this, 1.25D));
+        // TODO: Make Yukkuris attacks back Player when being attacked.
+        this.goalSelector.add(0, new EscapeDangerGoal(this, 0.5D));
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(0, new LookAtEntityGoal(this, MarisaEntity.class, 12f));
         this.goalSelector.add(1, new LookAroundGoal(this));
