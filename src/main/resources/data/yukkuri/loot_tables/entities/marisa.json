@@ -1,0 +1,53 @@
+{
+    "type": "minecraft:entity",
+    "pools": [
+        {
+            "rolls": {
+                "min": 0,
+                "max": 3
+            },
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:book"
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 4,
+                "max": 8
+            },
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "yukkuri:bean_paste"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:killed_by_player",
+                    "inverse": true
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 0,
+                "max": 2
+            },
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:cocoa_beans"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:killed_by_player",
+                    "inverse": true
+                }
+            ]
+        }
+    ]
+}
