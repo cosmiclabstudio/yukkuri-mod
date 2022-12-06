@@ -3,7 +3,10 @@ package com.touhou.yukkuri.entity.characters;
 import com.touhou.yukkuri.entity.EntityRegistry;
 import com.touhou.yukkuri.sounds.SoundRegistry;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.World;
@@ -15,10 +18,15 @@ public class PatchouliEntity extends DefaultYukkuri implements IAnimatable {
     }
 
     @Override
+    protected void initCustomGoals() {
+        this.goalSelector.add(1, new TemptGoal(this, 1.0, Ingredient.ofItems(Items.BOOK), false));
+        this.goalSelector.add(1, new TemptGoal(this, 1.0, Ingredient.ofItems(Items.ENCHANTED_BOOK), false));
+    }
+
+    @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
         return EntityRegistry.PATCHOULI_YUKKURI_TYPE.create(world);
     }
-
 
     @Override
     protected SoundEvent getAmbientSound() {
