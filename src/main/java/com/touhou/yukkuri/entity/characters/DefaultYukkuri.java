@@ -1,14 +1,17 @@
 package com.touhou.yukkuri.entity.characters;
 
+import com.touhou.yukkuri.items.types.Foods;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.ai.pathing.PathNodeType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
@@ -27,6 +30,9 @@ public class DefaultYukkuri extends PassiveEntity implements IAnimatable {
 
     public DefaultYukkuri(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
+        this.experiencePoints = 6;
+        this.setPathfindingPenalty(PathNodeType.DANGER_FIRE, 16.0F);
+        this.setPathfindingPenalty(PathNodeType.DAMAGE_FIRE, -1.0F);
     }
 
     public static DefaultAttributeContainer.Builder setAttributes() {
@@ -40,11 +46,14 @@ public class DefaultYukkuri extends PassiveEntity implements IAnimatable {
         // TODO: Make Yukkuris attacks back Player when being attacked.
         this.goalSelector.add(0, new EscapeDangerGoal(this, 0.5D));
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(0, new LookAtEntityGoal(this, MarisaEntity.class, 12f));
+        this.goalSelector.add(1, new TemptGoal(this, 1.0, Ingredient.ofItems(Foods.BEAN_PASTE), false));
         this.goalSelector.add(1, new LookAroundGoal(this));
         this.goalSelector.add(1, new LookAtEntityGoal(this, PlayerEntity.class, 8f));
         this.goalSelector.add(2, new WanderAroundGoal(this, 0.25D));
+        this.initCustomGoals();
     }
+
+    protected void initCustomGoals() {}
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         return PlayState.CONTINUE;
