@@ -19,8 +19,8 @@ public class PatchouliEntity extends DefaultYukkuri implements IAnimatable {
 
     @Override
     protected void initCustomGoals() {
-        this.goalSelector.add(1, new TemptGoal(this, 1.0, Ingredient.ofItems(Items.BOOK), false));
-        this.goalSelector.add(1, new TemptGoal(this, 1.0, Ingredient.ofItems(Items.ENCHANTED_BOOK), false));
+        this.goalSelector.add(1, new TemptGoal(this, TEMPT_SPEED, Ingredient.ofItems(Items.BOOK), false));
+        this.goalSelector.add(1, new TemptGoal(this, TEMPT_SPEED, Ingredient.ofItems(Items.ENCHANTED_BOOK), false));
     }
 
     @Override

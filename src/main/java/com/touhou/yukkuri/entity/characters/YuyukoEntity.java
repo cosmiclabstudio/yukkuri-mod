@@ -17,14 +17,14 @@ public class YuyukoEntity extends DefaultYukkuri implements IAnimatable {
 
     @Override
     protected void initCustomGoals() {
-        this.goalSelector.add(1, new TemptGoal(this, 1.0, Ingredient.ofItems(Items.COOKIE), false));
-        this.goalSelector.add(1, new TemptGoal(this, 1.0, Ingredient.ofItems(Items.COOKED_BEEF), false));
-        this.goalSelector.add(1, new TemptGoal(this, 1.0, Ingredient.ofItems(Items.COOKED_CHICKEN), false));
-        this.goalSelector.add(1, new TemptGoal(this, 1.0, Ingredient.ofItems(Items.COOKED_MUTTON), false));
-        this.goalSelector.add(1, new TemptGoal(this, 1.0, Ingredient.ofItems(Items.COOKED_PORKCHOP), false));
-        this.goalSelector.add(1, new TemptGoal(this, 1.0, Ingredient.ofItems(Items.COOKED_RABBIT), false));
-        this.goalSelector.add(1, new TemptGoal(this, 1.0, Ingredient.ofItems(Items.COOKED_COD), false));
-        this.goalSelector.add(1, new TemptGoal(this, 1.0, Ingredient.ofItems(Items.COOKED_SALMON), false));
+        this.goalSelector.add(1, new TemptGoal(this, TEMPT_SPEED, Ingredient.ofItems(Items.COOKIE), false));
+        this.goalSelector.add(1, new TemptGoal(this, TEMPT_SPEED, Ingredient.ofItems(Items.COOKED_BEEF), false));
+        this.goalSelector.add(1, new TemptGoal(this, TEMPT_SPEED, Ingredient.ofItems(Items.COOKED_CHICKEN), false));
+        this.goalSelector.add(1, new TemptGoal(this, TEMPT_SPEED, Ingredient.ofItems(Items.COOKED_MUTTON), false));
+        this.goalSelector.add(1, new TemptGoal(this, TEMPT_SPEED, Ingredient.ofItems(Items.COOKED_PORKCHOP), false));
+        this.goalSelector.add(1, new TemptGoal(this, TEMPT_SPEED, Ingredient.ofItems(Items.COOKED_RABBIT), false));
+        this.goalSelector.add(1, new TemptGoal(this, TEMPT_SPEED, Ingredient.ofItems(Items.COOKED_COD), false));
+        this.goalSelector.add(1, new TemptGoal(this, TEMPT_SPEED, Ingredient.ofItems(Items.COOKED_SALMON), false));
     }
 
     @Override

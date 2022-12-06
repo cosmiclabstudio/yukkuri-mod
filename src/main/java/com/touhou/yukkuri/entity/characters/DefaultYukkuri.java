@@ -27,6 +27,7 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class DefaultYukkuri extends PassiveEntity implements IAnimatable {
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    protected static final double TEMPT_SPEED = 0.5;
 
     public DefaultYukkuri(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
@@ -46,7 +47,7 @@ public class DefaultYukkuri extends PassiveEntity implements IAnimatable {
         // TODO: Make Yukkuris attacks back Player when being attacked.
         this.goalSelector.add(0, new EscapeDangerGoal(this, 0.5D));
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new TemptGoal(this, 1.0, Ingredient.ofItems(Foods.BEAN_PASTE), false));
+        this.goalSelector.add(1, new TemptGoal(this, TEMPT_SPEED, Ingredient.ofItems(Foods.BEAN_PASTE), false));
         this.goalSelector.add(1, new LookAroundGoal(this));
         this.goalSelector.add(1, new LookAtEntityGoal(this, PlayerEntity.class, 8f));
         this.goalSelector.add(2, new WanderAroundGoal(this, 0.25D));
