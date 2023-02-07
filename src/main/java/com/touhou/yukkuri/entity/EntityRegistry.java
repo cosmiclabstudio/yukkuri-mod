@@ -2,15 +2,15 @@ package com.touhou.yukkuri.entity;
 
 import com.touhou.yukkuri.Yukkuri;
 import com.touhou.yukkuri.entity.characters.*;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class EntityRegistry {
 
@@ -33,6 +33,27 @@ public class EntityRegistry {
     public static final EntityType<YukariEntity> YUKARI_YUKKURI_TYPE = Registry.register(Registry.ENTITY_TYPE, new Identifier(Yukkuri.MOD_ID, "yukari"), FabricEntityTypeBuilder.<YukariEntity>createMob().spawnGroup(SpawnGroup.CREATURE).entityFactory(YukariEntity::new).defaultAttributes(YukariEntity::setAttributes).dimensions(EntityDimensions.fixed(0.75f, 0.6f)).build());
     public static final EntityType<YuyukoEntity> YUYUKO_YUKKURI_TYPE = Registry.register(Registry.ENTITY_TYPE, new Identifier(Yukkuri.MOD_ID, "yuyuko"), FabricEntityTypeBuilder.<YuyukoEntity>createMob().spawnGroup(SpawnGroup.CREATURE).entityFactory(YuyukoEntity::new).defaultAttributes(YuyukoEntity::setAttributes).dimensions(EntityDimensions.fixed(0.75f, 0.6f)).build());
 
+    public static void entityBiome(TagKey<net.minecraft.world.biome.Biome> biomeTags, SpawnGroup group, EntityType<?> entityType) {
+        BiomeModifications.addSpawn(ctx -> ctx.hasTag(biomeTags), group, entityType, 420, 1, 3);
+    }
     public static void init() {
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, ALICE_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, BLUEREIMU_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, CHEN_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, CIRNO_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, FLANDRE_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, MARISA_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, NITORI_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, PATCHOULI_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, REIMU_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, REISEN_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, REMILIA_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, SAKUYA_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, SANAE_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, TENSHI_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, UTSUHO_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, YOUMU_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, YUKARI_YUKKURI_TYPE);
+        entityBiome(ConventionalBiomeTags.IN_OVERWORLD, SpawnGroup.CREATURE, YUYUKO_YUKKURI_TYPE);
     }
 }
