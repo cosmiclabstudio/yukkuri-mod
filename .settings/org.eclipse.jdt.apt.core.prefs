@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.apt.aptEnabled=true
+org.eclipse.jdt.apt.genSrcDir=bin/generated-sources/annotations
+org.eclipse.jdt.apt.genTestSrcDir=bin/generated-test-sources/annotations
+org.eclipse.jdt.apt.processorOptions/defaultObfuscationEnv=named\:intermediary
+org.eclipse.jdt.apt.processorOptions/inMapFileNamedIntermediary=/Users/sorae42/.gradle/caches/fabric-loom/1.19.2/net.fabricmc.yarn.1_19_2.1.19.2+build.28-v2/mappings.tiny
+org.eclipse.jdt.apt.processorOptions/outMapFileNamedIntermediary=/Users/sorae42/Projects/yukkuri-mod/build/loom-cache/mixin-map-net.fabricmc.yarn.1_19_2.1.19.2+build.28-v2.main.tiny
+org.eclipse.jdt.apt.processorOptions/outRefMapFile=/Users/sorae42/Projects/yukkuri-mod/build/classes/java/main/yukkuri-refmap.json
+org.eclipse.jdt.apt.processorOptions/quiet=true
