@@ -119,3 +119,6 @@ run/
 
 # ignore output automation
 automation/output/*
+
+# weird folder
+/bin/
