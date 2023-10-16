@@ -7,9 +7,8 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.World;
-import software.bernie.geckolib3.core.IAnimatable;
 
-public class FlandreEntity extends DefaultYukkuri implements IAnimatable {
+public class FlandreEntity extends DefaultYukkuri {
     public FlandreEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
     }

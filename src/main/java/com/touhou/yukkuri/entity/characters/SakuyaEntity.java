@@ -5,9 +5,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
-import software.bernie.geckolib3.core.IAnimatable;
 
-public class SakuyaEntity extends DefaultYukkuri implements IAnimatable {
+public class SakuyaEntity extends DefaultYukkuri {
     public SakuyaEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
     }

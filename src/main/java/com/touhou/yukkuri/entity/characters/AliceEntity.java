@@ -6,9 +6,8 @@ import net.minecraft.entity.ai.goal.LookAtEntityGoal;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
-import software.bernie.geckolib3.core.IAnimatable;
 
-public class AliceEntity extends DefaultYukkuri implements IAnimatable {
+public class AliceEntity extends DefaultYukkuri {
     public AliceEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
     }

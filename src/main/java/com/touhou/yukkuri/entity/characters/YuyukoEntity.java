@@ -8,9 +8,8 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
-import software.bernie.geckolib3.core.IAnimatable;
 
-public class YuyukoEntity extends DefaultYukkuri implements IAnimatable {
+public class YuyukoEntity extends DefaultYukkuri {
     public YuyukoEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
     }

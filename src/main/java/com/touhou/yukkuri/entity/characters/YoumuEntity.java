@@ -7,11 +7,10 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.World;
-import software.bernie.geckolib3.core.IAnimatable;
 
-public class YoumuEntity extends DefaultYukkuri implements IAnimatable {
-    //private final AnimationBuilder FLOATING_GHOST = new AnimationBuilder().addAnimation("animation.youmu.ghost_guided", ILoopType.EDefaultLoopTypes.LOOP);
+public class YoumuEntity extends DefaultYukkuri {
     // the animation doesn't work so i just comment them out for now
+    //private final AnimationBuilder FLOATING_GHOST = new AnimationBuilder().addAnimation("animation.youmu.ghost_guided", ILoopType.EDefaultLoopTypes.LOOP);
 
     public YoumuEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);

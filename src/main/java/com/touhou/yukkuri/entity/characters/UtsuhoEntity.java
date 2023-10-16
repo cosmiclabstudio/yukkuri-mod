@@ -7,9 +7,8 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.World;
-import software.bernie.geckolib3.core.IAnimatable;
 
-public class UtsuhoEntity extends DefaultYukkuri implements IAnimatable {
+public class UtsuhoEntity extends DefaultYukkuri {
     public UtsuhoEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
     }

@@ -10,9 +10,8 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.World;
-import software.bernie.geckolib3.core.IAnimatable;
 
-public class PatchouliEntity extends DefaultYukkuri implements IAnimatable {
+public class PatchouliEntity extends DefaultYukkuri {
     public PatchouliEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
     }

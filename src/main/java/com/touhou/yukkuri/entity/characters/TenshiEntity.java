@@ -5,9 +5,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
-import software.bernie.geckolib3.core.IAnimatable;
 
-public class TenshiEntity extends DefaultYukkuri implements IAnimatable {
+public class TenshiEntity extends DefaultYukkuri {
     public TenshiEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
     }
