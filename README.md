@@ -1,3 +1,6 @@
+> [!NOTE]
+> I don't plan on updating to newer version until all feature set are complete.
+
 ![cover photo](cover.png)
 <p align="center" style="font-size:30px"><strong>Yukkuri in Minecraft</strong></p>
 
