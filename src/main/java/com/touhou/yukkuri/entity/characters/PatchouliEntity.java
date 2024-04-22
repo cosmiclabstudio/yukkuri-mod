@@ -44,6 +44,7 @@ public class PatchouliEntity extends DefaultYukkuri {
         }
     }
     
+    @Override
     protected SoundEvent getDeathSound() {
         return SoundRegistry.ENTITY_PATCHOULI_DIED;
     }

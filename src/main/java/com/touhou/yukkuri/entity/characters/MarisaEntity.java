@@ -35,6 +35,7 @@ public class MarisaEntity extends DefaultYukkuri {
         return SoundRegistry.ENTITY_MARISA_ZE;
     }
     
+    @Override
     protected SoundEvent getDeathSound() {
         return SoundRegistry.ENTITY_MARISA_EVADED;
     }
