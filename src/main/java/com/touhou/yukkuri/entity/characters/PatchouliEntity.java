@@ -1,9 +1,14 @@
+/*
+ * Copyright (c) 2024.
+ */
+
 package com.touhou.yukkuri.entity.characters;
 
 import com.touhou.yukkuri.entity.EntityRegistry;
 import com.touhou.yukkuri.sounds.SoundRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.TemptGoal;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
@@ -26,16 +31,12 @@ public class PatchouliEntity extends DefaultYukkuri {
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
         return EntityRegistry.PATCHOULI_YUKKURI_TYPE.create(world);
     }
-
-    @Override
-    protected SoundEvent getAmbientSound() {
+    
+    protected SoundEvent getHurtSound(DamageSource source) {
         return SoundRegistry.ENTITY_PATCHOULI_MUKYU;
     }
-
-    @Override
-    public void playAmbientSound() {
-        if (!world.isClient) {
-            this.playSound(getAmbientSound(), 1, 1);
-        }
+    
+    protected SoundEvent getDeathSound() {
+        return SoundRegistry.ENTITY_PATCHOULI_DIED;
     }
 }
