@@ -36,6 +36,13 @@ public class PatchouliEntity extends DefaultYukkuri {
         return SoundRegistry.ENTITY_PATCHOULI_MUKYU;
     }
     
+    @Override
+    public void playHurtSound(DamageSource source) {
+        if(!world.isClient) {
+          this.playSound(getHurtSound(source), 1, 1);   
+        }
+    }
+    
     protected SoundEvent getDeathSound() {
         return SoundRegistry.ENTITY_PATCHOULI_DIED;
     }
