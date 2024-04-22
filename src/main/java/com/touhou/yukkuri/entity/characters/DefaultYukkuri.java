@@ -1,6 +1,7 @@
 package com.touhou.yukkuri.entity.characters;
 
 import com.touhou.yukkuri.items.types.Foods;
+import com.touhou.yukkuri.sounds.SoundRegistry;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -13,6 +14,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
@@ -80,6 +82,10 @@ public class DefaultYukkuri extends PassiveEntity implements IAnimatable {
     @Override
     public AnimationFactory getFactory() {
         return factory;
+    }
+    
+    protected SoundEvent getDeathSound() {
+        return SoundRegistry.ENTITY_DIED;
     }
 }
 

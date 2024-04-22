@@ -53,5 +53,10 @@
     "entity.youmu.myon": {
         "sounds": ["yukkuri:entity/youmu/myon"],
         "subtitle": "subtitle.yukkuri.youmu.myon"
+    },
+    
+    "entity.touhou.died": {
+        "sounds": ["yukkuri:entity/se-died"],
+        "subtitle": "subtitle.yukkuri.died"
     }
 }

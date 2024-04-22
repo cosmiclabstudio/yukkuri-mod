@@ -10,6 +10,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class SoundRegistry {
+    public static SoundEvent ENTITY_DIED            = register("entity.touhou.died");
+    
     public static SoundEvent ENTITY_CIRNO_BAKA      = register("entity.cirno.baka");
     public static SoundEvent ENTITY_MARISA_ZE       = register("entity.marisa.ze");
     public static SoundEvent ENTITY_SCARLET_UUU     = register("entity.scarlet.uuu");
