@@ -40,7 +40,7 @@ public class PatchouliEntity extends DefaultYukkuri {
     @Override
     public void playHurtSound(DamageSource source) {
         if(!world.isClient) {
-          this.playSound(getHurtSound(source), 1, RandomNumber.generateFloat(0.6F, 0.9F));   
+          this.playSound(getHurtSound(source), 1, RandomNumber.generateFloat(1F, 1.3F));   
         }
     }
     
