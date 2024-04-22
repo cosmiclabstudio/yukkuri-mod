@@ -40,11 +40,11 @@
 
     "item.yukkuri.bean_paste": "Bean Paste",
 
-    "subtitle.yukkuri.cirno.baka": "Idiot",
-    "subtitle.yukkuri.marisa.ze": "Marisa's Ze",
-    "subtitle.yukkuri.patchouli.mukyu": "Mukyu",
-    "subtitle.yukkuri.scarlet.uuu": "Uuu...",
-    "subtitle.yukkuri.usagi.bnuuy": "Bnuuy",
-    "subtitle.yukkuri.utsuho.unyu": "Unyu",
-    "subtitle.yukkuri.youmu.myon": "Myon"
+    "subtitle.yukkuri.cirno.baka": "Cirno Noise",
+    "subtitle.yukkuri.marisa.ze": "Marisa Noise",
+    "subtitle.yukkuri.patchouli.mukyu": "Patchouli Noise",
+    "subtitle.yukkuri.scarlet.uuu": "Scarlet Noise",
+    "subtitle.yukkuri.usagi.bnuuy": "Reisen Noise",
+    "subtitle.yukkuri.utsuho.unyu": "Okuu Noise",
+    "subtitle.yukkuri.youmu.myon": "Youmu Noise"
 }
