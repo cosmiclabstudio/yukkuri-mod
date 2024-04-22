@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024.
+ */
+
 package com.touhou.yukkuri.entity.characters;
 
 import com.touhou.yukkuri.entity.EntityRegistry;
@@ -29,5 +33,9 @@ public class MarisaEntity extends DefaultYukkuri {
     @Override
     protected SoundEvent getAmbientSound() {
         return SoundRegistry.ENTITY_MARISA_ZE;
+    }
+    
+    protected SoundEvent getDeathSound() {
+        return SoundRegistry.ENTITY_MARISA_EVADED;
     }
 }

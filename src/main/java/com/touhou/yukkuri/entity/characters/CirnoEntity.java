@@ -25,6 +25,4 @@ public class CirnoEntity extends DefaultYukkuri {
     public SoundEvent getAmbientSound() {
         return SoundRegistry.ENTITY_CIRNO_BAKA;
     }
-    
-    
 }
