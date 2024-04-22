@@ -6,6 +6,7 @@ package com.touhou.yukkuri.entity.characters;
 
 import com.touhou.yukkuri.entity.EntityRegistry;
 import com.touhou.yukkuri.sounds.SoundRegistry;
+import com.touhou.yukkuri.utils.RandomNumber;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.TemptGoal;
 import net.minecraft.entity.damage.DamageSource;
@@ -39,7 +40,7 @@ public class PatchouliEntity extends DefaultYukkuri {
     @Override
     public void playHurtSound(DamageSource source) {
         if(!world.isClient) {
-          this.playSound(getHurtSound(source), 1, 1);   
+          this.playSound(getHurtSound(source), 1, RandomNumber.generateFloat(0.6F, 0.9F));   
         }
     }
     
