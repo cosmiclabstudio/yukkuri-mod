@@ -18,6 +18,11 @@
         "subtitle": "subtitle.yukkuri.patchouli.mukyu"
     },
 
+    "entity.patchouli.died": {
+        "sounds": ["yukkuri:entity/patchouli/hurt"],
+        "subtitle": "subtitle.yukkuri.patchouli.died"
+    },
+
     "entity.scarlet.uuu": {
         "sounds": [
             "yukkuri:entity/scarlet/uuu1",
