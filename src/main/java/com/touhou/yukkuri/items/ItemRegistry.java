@@ -9,6 +9,6 @@ public class ItemRegistry {
     public static void init() {
         Foods.init();
         SpawnEggs.init();
-        Miscellaneous.init(); // TODO: Hide everything in this category
+        Miscellaneous.init();
     }
 }

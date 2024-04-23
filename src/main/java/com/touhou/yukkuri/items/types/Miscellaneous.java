@@ -9,7 +9,7 @@ public class Miscellaneous {
     public static final Item SHOWCASE = register("showcase");
     
     public static Item register(String name) {
-        Item item = new Item(new Item.Settings().group(Yukkuri.ITEM_GROUP.hideName()));
+        Item item = new Item(new Item.Settings());
         return Registry.register(Registry.ITEM, new Identifier(Yukkuri.MOD_ID, name), item);
     }
 
