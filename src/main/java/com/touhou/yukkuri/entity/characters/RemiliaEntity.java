@@ -2,6 +2,7 @@ package com.touhou.yukkuri.entity.characters;
 
 import com.touhou.yukkuri.entity.EntityRegistry;
 import com.touhou.yukkuri.sounds.SoundRegistry;
+import com.touhou.yukkuri.utils.RandomNumber;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -26,7 +27,7 @@ public class RemiliaEntity extends DefaultYukkuri {
     @Override
     public void playAmbientSound() {
         if (!world.isClient) {
-            this.playSound(getAmbientSound(), 1, 1);
+            this.playSound(getAmbientSound(), 1, RandomNumber.generateFloat(1F, 1.42F));
         }
     }
 }
