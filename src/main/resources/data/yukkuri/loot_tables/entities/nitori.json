@@ -27,7 +27,7 @@
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "minecraft: redstone"
+                    "name": "minecraft:redstone"
                 }
             ],
             "conditions": [
