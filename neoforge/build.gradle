@@ -3,6 +3,20 @@ plugins {
     id 'net.neoforged.moddev'
 }
 
+repositories {
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroup("software.bernie.geckolib")
+        }
+    }
+}
+
+dependencies {
+    implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
+}
+
 neoForge {
     version = neoforge_version
     // Automatically enable neoforge AccessTransformers if the file exists
