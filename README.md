@@ -1,7 +1,9 @@
 > [!NOTE]
-> Some features need to be implemented before working on the 1.20.X update.
+> This is the 1.19.2 Fabric only branch. I don't plan on updating this one anymore.
 > 
-> Mainly I don't want to deal with breaking changes while implementing a lot of stuff so please bear with me for now.
+> 1.21 update is being done in the 1.21 branch, which is currently the default branch.
+>
+> Migration will probably take a really long time, but it will worth it in the end.
 
 ![cover photo](cover.png)
 <p align="center" style="font-size:30px"><strong>Yukkuri in Minecraft</strong></p>
