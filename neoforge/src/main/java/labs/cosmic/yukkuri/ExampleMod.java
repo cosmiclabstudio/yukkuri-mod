@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package labs.cosmic.yukkuri;
 
 
 import net.neoforged.bus.api.IEventBus;

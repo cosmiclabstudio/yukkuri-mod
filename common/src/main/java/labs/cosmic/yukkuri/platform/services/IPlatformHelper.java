@@ -1,4 +1,4 @@
-package com.example.examplemod.platform.services;
+package labs.cosmic.yukkuri.platform.services;
 
 public interface IPlatformHelper {
 

@@ -1,7 +1,7 @@
-package com.example.examplemod.platform;
+package labs.cosmic.yukkuri.platform;
 
-import com.example.examplemod.Constants;
-import com.example.examplemod.platform.services.IPlatformHelper;
+import labs.cosmic.yukkuri.Constants;
+import labs.cosmic.yukkuri.platform.services.IPlatformHelper;
 
 import java.util.ServiceLoader;
 
